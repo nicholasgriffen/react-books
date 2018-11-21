@@ -1,13 +1,7 @@
-import React from 'React'
+import React from 'react'
 
-const Book = ({ title, id, author, pages }) => (
-    <li id={ id }>{ title }
-    <a href={(function([authorName = 'Unknown', pageCount = 'Unknown']) {
-        return (
-            `Author: ${authorName}\nPage Count: ${pageCount}`
-        )
-    })([author, pages])}>'More info...'</a>
-    </li>
+const Book = ({ book: { title, id, author, pages }}) => (
+    <li id={id}>{title}<br></br>{`By: ${author}`}</li>
 )
 
 export default Book
